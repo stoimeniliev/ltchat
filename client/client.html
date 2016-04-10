@@ -1,0 +1,99 @@
+<head>
+    <meta name="google-site-verification" content="U_kwzeqWzyUr5DLirzhvyWadXIFAvqC8AoU40bvjQhA" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> Leader Talks - Live Chat</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="http://www.bebzcozzy.com/css/ResponsiveElement.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style>
+          body { background: black; }
+          .container { background: white;}
+          .largeText {
+              font-size:34px;
+              color:#2CB7EA;
+              }
+          .bigText {
+              font-size:24px;
+              color:#2CB7EA;
+              } 
+          .bigTextGreen {
+              font-size:24px;
+              color:#64A03B;
+              }    
+          .coolBorder{
+              border-style: solid;
+              border-color: #64A03B #2CB7EA;
+              height: 60%;
+              overflow: scroll;
+          }
+        </style>
+</head>
+
+<body>
+  <div class="row ">
+  <div class="row">
+        <div class="col-lg-3 text-left"></div>
+        <div class="col-lg-2 text-left"><img src="http://leadertalks.org/img/logos/leadertalks-avatars.png" height="120px" width="186px"></div>
+        <div class="col-lg-4 text-left OnlyforWeb"><h1 align="center" class="largeText" >{{> welcome }}</h1></div>
+        <div class="col-lg-3 text-left"></div>
+    </div>
+  <br>
+  <div class="row">
+                <div class="col-lg-3 largeText"><br><br><br><center><img src="http://leadertalks.org/img/logos/leadertalks-avatars.png" height="120px" width="186px"></center></div>
+                <div class="col-lg-6 text-left coolBorder">
+                                         
+  {{> messages }}
+  
+                </div>
+                <div class="col-lg-3 largeText"><br><br><br><center><img src="http://leadertalks.org/img/logos/leadertalks-avatars.png" height="120px" width="186px"></center></div>
+                </div>
+<div class="row">
+<div class="col-lg-4 text-left"></div>
+<div class="col-lg-4 text-left">{{> input }}</div>
+<div class="col-lg-4 text-left"></div>
+</div>
+                   
+
+</div>
+</body>
+<template name="welcome">
+  <p class="largeText">
+<strong>LeaderTalks.org/CHAT</strong>
+  </p>
+</template>
+
+
+<template name="messages">
+  {{#each messages}}
+    <strong class="bigText">{{datetime}} - {{name}}:</strong> <strong class="bigTextGreen">{{message}}</strong><br>
+  {{/each}}
+  
+</template>
+
+<template name="input">
+  <p>Name: <input type="text" id="name"></p>
+  <p>Message: <input type="text" id="message"></p>
+</template>
